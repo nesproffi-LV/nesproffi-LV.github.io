@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Бот Ligne Vive</title>
+</head>
+<body style="margin:0;background:#F9F7F3;font-family:'SourceSans3','Inter',sans-serif;">
+  <div style="text-align:center;padding-top:80px;">
+    <p style="font-size:18px;color:#2B1B12;margin-bottom:16px;">
+      Перенаправляем в бота Ligne Vive...
+    </p>
+    <p style="font-size:14px;color:#5C4A42;">
+      Если переход не произошёл — 
+      <a href="https://t.me/LigneViveStudioBot" id="fallback-link"
+         style="color:#C4683D;font-weight:600;">
+        нажмите здесь
+      </a>
+    </p>
+  </div>
+  <p style="font-size:12px;color:#B0A49A;margin-top:20px;text-align:center;">
+    Telegram не открывается? 
+    <a href="tg://proxy?server=85.137.91.120&port=443&secret=d1e04feb4b899c2d4f64b566963b61ca"
+       style="color:#C4683D;text-decoration:underline;">
+      Настройте доступ, запишитесь и отключите прокси в Настройках Telegram
+    </a>
+  </p>
+  <script>
+    
+    var qs = window.location.search;
+    var baseUrl = "https://t.me/LigneViveStudioBot";
+    var targetUrl = baseUrl + qs;
+    
+    
+    document.getElementById('fallback-link').href = targetUrl;
+    
+    
+    window.location.replace(targetUrl);
+  </script>
+</body>
+</html>

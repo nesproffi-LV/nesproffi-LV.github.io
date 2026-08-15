@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="canonical" href="https://nesproffi-LV.github.io/tags/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.649caf180e230b8dae19b8360f2e2f60053d14666783d05733033d87b3ccbd80.css" integrity="sha256-ZJyvGA4jC42uGbg2Dy4vYAU9FGZng9BXMwM9h7PMvYA=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.ed3260cb559396ba107d3165b9f4f0872d935d6411ba79c46a0bca053b74e9a6.css" integrity="sha256-7TJgy1WTlroQfTFlufTwhy2TXWQRunnEagvKBTt06aY=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://nesproffi-LV.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://nesproffi-LV.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://nesproffi-LV.github.io/favicon-32x32.png">
@@ -313,22 +313,18 @@ document.addEventListener('DOMContentLoaded',function(){
     
 <footer class="footer" style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;padding:16px 0;font-size:13px;color:#5C4A42;border-top:1px solid rgba(180,149,122,0.25);">
     <span>&copy; 2026 <a href="https://nesproffi-LV.github.io/" style="color:#2B1B12;">Ligne Vive — творческая мастерская</a></span>
-<script src="/js/showcase-morph.js"></script>
-<script src="/js/showcase-morph.js"></script>
 
     <span style="color:#B0A49A;">·</span>
     <a href="/privacy/" style="color:#5C4A42;">Политика конфиденциальности</a>
     <span style="color:#B0A49A;">·</span>
     <a href="/terms/" style="color:#5C4A42;">Пользовательское соглашение</a>
 </footer>
-<script src="/js/showcase-morph.js"></script>
 <a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
     <polyline points="17 11 12 6 7 11"></polyline>
     <polyline points="17 18 12 13 7 18"></polyline>
   </svg>
 </a>
-<script src="/js/showcase-morph.js"></script>
 
 <script>
   let menu = document.getElementById('menu');
@@ -347,11 +343,11 @@ document.addEventListener('DOMContentLoaded',function(){
       e.preventDefault();
       var id = this.getAttribute("href").substr(1);
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+        document.querySelector('[id="' + decodeURIComponent(id) + '"]').scrollIntoView({
           behavior: "smooth"
         });
       } else {
-        document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+        document.querySelector('[id="' + decodeURIComponent(id) + '"]').scrollIntoView();
       }
       if (id === "top") {
         history.replaceState(null, null, " ");
@@ -372,7 +368,6 @@ document.addEventListener('DOMContentLoaded',function(){
     }
   };
 </script>
-<script src="/js/showcase-morph.js"></script>
 
 <div class="course-drawer-overlay" id="courseDrawerOverlay">
   <div class="course-drawer" id="courseDrawer">
@@ -581,6 +576,8 @@ document.getElementById('courseDrawerOverlay').addEventListener('click', functio
 });
 </script>
 
+
+<script src="/js/showcase-morph.js"></script>
 </body>
 
 </html>

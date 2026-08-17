@@ -488,7 +488,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <section class="showcase-section" id="showcase-courses">
 
   
-  <div class="showcase-card" data-course="dynamic-sketch">
+  <div class="showcase-card blur-active" data-blur-srcs="sketch-1.webp,sketch-2.webp,sketch-3.webp,sketch-4.webp,sketch-5.webp,sketch-6.webp,sketch-7.webp,sketch-8.webp,sketch-7.webp,sketch-6.webp,sketch-5.webp,sketch-4.webp,sketch-3.webp,sketch-2.webp" style="--blur-bg:url('/images/showcase/sketch-1.webp')" data-course="dynamic-sketch">
     <div class="showcase-card__images">
       <video class="showcase-card__img showcase-card__video active" src="/videos/showcase/sketch.mp4" autoplay muted loop playsinline preload="auto" poster="/images/showcase/sketch-1.webp"></video>
     </div>
@@ -512,7 +512,7 @@ document.addEventListener('DOMContentLoaded',function(){
   </div>
 
   
-  <div class="showcase-card showcase-card--reverse" data-course="acrylic-mk">
+  <div class="showcase-card showcase-card--reverse blur-active" data-blur-srcs="acrylic-1.webp,acrylic-2.webp,acrylic-3.webp,acrylic-4.webp,acrylic-5.webp,acrylic-2.webp,acrylic-4.webp,acrylic-5.webp,acrylic-3.webp,acrylic-2.webp" style="--blur-bg:url('/images/showcase/acrylic-1.webp')" data-course="acrylic-mk">
     <div class="showcase-card__images">
       <video class="showcase-card__img showcase-card__video active" src="/videos/showcase/acrylic.mp4" autoplay muted loop playsinline preload="auto" poster="/images/showcase/acrylic-1.webp"></video>
     </div>
@@ -535,7 +535,7 @@ document.addEventListener('DOMContentLoaded',function(){
   </div>
 
   
-  <div class="showcase-card" data-course="line-color">
+  <div class="showcase-card blur-active" data-blur-srcs="color-1.webp,color-2.webp,color-3.webp,color-4.webp,color-3.webp,color-2.webp,color-1.webp,color-4.webp,color-3.webp,color-2.webp" style="--blur-bg:url('/images/showcase/color-1.webp')" data-course="line-color">
     <div class="showcase-card__images">
       <video class="showcase-card__img showcase-card__video active" src="/videos/showcase/color.mp4" autoplay muted loop playsinline preload="auto" poster="/images/showcase/color-1.webp"></video>
     </div>
@@ -562,6 +562,29 @@ document.addEventListener('DOMContentLoaded',function(){
     <a href="/courses/" class="showcase-all-btn">Все курсы →</a>
     <a href="/workshops/" class="showcase-all-btn showcase-all-btn--ghost">Все мастер-классы →</a>
   </div>
+
+<script>
+(function(){
+  function initBlurCycle() {
+    var cards = document.querySelectorAll('.showcase-card[data-blur-srcs]');
+    cards.forEach(function(card){
+      if (card.dataset.blurInit) return;
+      card.dataset.blurInit = '1';
+      var srcs = card.dataset.blurSrcs.split(',');
+      var i = 1; 
+      setInterval(function(){
+        var src = srcs[i % srcs.length];
+        card.style.setProperty('--blur-bg', 'url("/images/showcase/' + src + '")');
+        i++;
+      }, 1000);
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBlurCycle);
+  } else { initBlurCycle(); }
+})();
+</script>
+
 </section>
 
 

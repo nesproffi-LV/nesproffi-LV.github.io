@@ -15,7 +15,7 @@
 Мой путь начался с классического образования: я окончила педагогический университет (МГОУ им. Крупской, сейчас — Государственный университет просвещения). Там я получила академическую базу, но тело по-настоящему открылось мне позже, через спорт.">
 <meta name="author" content="">
 <link rel="canonical" href="https://nesproffi-LV.github.io/about/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.968ee189b2aca6fc30d3cd711199eab8f49e743f490255d95da632a61ec4f9f1.css" integrity="sha256-lo7hibKspvww081xEZnquPSedD9JAlXZXaYyph7E&#43;fE=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e4afab795f9d693a52caf631a00794f9381dbe4e650bc247c43192b047aae86c.css" integrity="sha256-5K&#43;reV&#43;daTpSyvYxoAeU&#43;Tgdvk5lC8JHxDGSsEeq6Gw=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://nesproffi-LV.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://nesproffi-LV.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://nesproffi-LV.github.io/favicon-32x32.png">
@@ -65,7 +65,9 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta name="google-site-verification" content="c3MXXaQny7E_gvOxGSH-4xzGnkVSasXCuwy5jRRvtxM" /><style>
+</script><link rel="preload" as="image" href="/images/easel.png" fetchpriority="high">
+<link rel="preload" as="image" href="/images/easel-front.png" fetchpriority="high">
+<meta name="google-site-verification" content="c3MXXaQny7E_gvOxGSH-4xzGnkVSasXCuwy5jRRvtxM" /><style>
   .booking-overlay{position:fixed;inset:0;z-index:9999;background:rgba(20,12,8,0.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.4s ease}
   .booking-overlay--visible{opacity:1;pointer-events:auto}
   .booking-modal{background:rgba(250,248,245,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(196,104,61,0.18);border-radius:24px;padding:24px 20px 20px;max-width:420px;width:92%;max-height:85vh;overflow-y:auto;position:relative;box-shadow:0 24px 64px rgba(43,27,18,0.25);text-align:center;transform:translateY(20px);transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1)}
@@ -591,6 +593,7 @@ document.addEventListener('DOMContentLoaded',function(){
     <button class="course-drawer__close" onclick="closeCourseDrawer()">&times;</button>
     <div class="course-drawer__content" id="courseDrawerContent"></div>
     <div class="course-drawer__footer">
+      <a class="course-drawer__more" id="courseDrawerMore" href="#" style="display:none;">Развернуть описание →</a>
       <button class="course-drawer__cta" onclick="closeCourseDrawer(); setTimeout(function(){if(typeof openBookingModal==='function')openBookingModal();}, 900);">Записаться</button>
     </div>
   </div>
@@ -720,6 +723,29 @@ document.addEventListener('DOMContentLoaded',function(){
   .course-drawer-overlay { align-items: center; }
   .course-drawer { border-radius: 24px; max-height: 78vh; }
 }
+
+ 
+.course-drawer__footer {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+.course-drawer__more {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 1.5px solid var(--terracotta);
+  border-radius: 999px;                
+  color: var(--terracotta) !important;
+  background: transparent;
+  font-family: 'SourceSans3', sans-serif;
+  font-size: 14px;
+  font-weight: 550;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+.course-drawer__more:hover { background: rgba(196,104,61,0.08); }
+
 </style>
 
 <script>
@@ -736,21 +762,24 @@ var courseData = {
     title: 'Динамичный скетч: от пятна до образа',
     priceCurrent: '17 500 ₽',
     priceOld: '25 000 ₽',
-    desc: 'Десять занятий, которые пересобирают ваш рисунок. От первой ligne vive до многофигурной композиции. Анатомия, жест, драпировка, стаффаж — всё, чтобы рисовать людей живыми. Вы начнёте видеть тело как систему натяжений и спиралей и унесёте с собой не просто навыки, а собственный стиль.'
+    desc: '7 занятий · Лумис · Вилппу · современная анатомия. От первой линии действия до авторского стиля — научитесь рисовать людей и животных живыми и точными, даже если начнёте с нуля.',
+    moreUrl: '/courses/dynamic-sketch/'
   },
   'acrylic-mk': {
     tag: 'Мастер-класс',
     title: 'Картина за 3 часа акрилом',
-    priceCurrent: '3 000 ₽',
+    priceCurrent: '2 500 ₽',
     priceOld: '4 500 ₽',
-    desc: 'За один вечер вы создадите готовую акриловую картину на холсте. Мы работаем не только кистями, но и неожиданными инструментами, чтобы добиться живых эффектов. Вы узнаете, как строить композицию, смешивать цвета и передавать свет. И унесёте домой собственное произведение.'
+    desc: 'Каждую неделю — новая тема, новая картина. Пишем в стиле экспрессивного импрессионизма: смело, свободно, с живым мазком.<br><br>— Мини-группа от 3 до 8 человек — 2 500 ₽<br>— Индивидуально — <s>5 000 ₽</s> 3 700 ₽',
+    moreUrl: '/workshops/mk-1/'
   },
   'line-color': {
     tag: 'Курс',
     title: 'Линия и цвет: от наброска к картине',
     priceCurrent: '6 900 ₽',
     priceOld: '9 000 ₽',
-    desc: 'Три занятия по 2,5 часа, где скетч перетекает в живопись. Программа насыщеннее: ставим руку и разбираем строение предметов и живых объектов. Вы делаете быстрые, но углублённые наброски людей и животных — от портрета до фигуры, — а затем переносите лучший эскиз на холст. Я покажу живописные приёмы, чтобы передать свет, характер и фактуру. Вы уйдёте с готовой картиной и пониманием, как работать с цветом и формой.'
+    desc: 'Занятие 1. Живая линия — строение людей и животных, жест и форма несколькими линиями.<br><br>Занятие 2. Первый готовый набросок к картине — линеры и акварельные маркеры, серия живых скетчей.',
+    moreUrl: '/courses/line-and-color/'
   }
 };
 
@@ -759,6 +788,11 @@ function openCourseDrawer(courseId) {
   if (footer) { footer.style.display = (courseId === "trial") ? "none" : "block"; }
   var data = courseData[courseId];
   if (!data) return;
+  var more = document.getElementById('courseDrawerMore');
+  if (more) {
+    if (data.moreUrl) { more.href = data.moreUrl; more.style.display = 'inline-block'; }
+    else { more.style.display = 'none'; }
+  }
   var content = document.getElementById('courseDrawerContent');
   var priceBlock = '';
   if (data.priceOld) {

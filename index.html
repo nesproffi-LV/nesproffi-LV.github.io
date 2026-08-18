@@ -577,23 +577,29 @@ document.addEventListener('DOMContentLoaded',function(){
 
 <script>
 (function(){
-  function initBlurCycle() {
-    var cards = document.querySelectorAll('.showcase-card[data-blur-srcs]');
-    cards.forEach(function(card){
+  function initBlurSync() {
+    document.querySelectorAll('.showcase-card[data-blur-srcs]').forEach(function(card){
       if (card.dataset.blurInit) return;
       card.dataset.blurInit = '1';
+      var video = card.querySelector('video.showcase-card__video');
+      if (!video) return;
       var srcs = card.dataset.blurSrcs.split(',');
-      var i = 1; 
-      setInterval(function(){
-        var src = srcs[i % srcs.length];
-        card.style.setProperty('--blur-bg', 'url("/images/showcase/' + src + '")');
-        i++;
-      }, 2500);
+      var n = srcs.length;
+      
+      function sync() {
+        var t = video.currentTime;
+        var dur = video.duration || (n * 2.5);
+        var idx = Math.min(n - 1, Math.floor((t / dur) * n));
+        card.style.setProperty('--blur-bg', 'url("/images/showcase/' + srcs[idx] + '")');
+      }
+      video.addEventListener('timeupdate', sync);
+      video.addEventListener('loadedmetadata', sync);
+      sync();
     });
   }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initBlurCycle);
-  } else { initBlurCycle(); }
+    document.addEventListener('DOMContentLoaded', initBlurSync);
+  } else { initBlurSync(); }
 })();
 </script>
 

@@ -623,7 +623,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
  
 .course-drawer__footer {
-  display: flex;
+  display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   gap: 10px !important;
@@ -642,6 +642,8 @@ document.addEventListener('DOMContentLoaded',function(){
   transition: all 0.3s ease;
 }
 .course-drawer__more:hover { background: rgba(196,104,61,0.08); }
+
+.course-drawer__footer--hidden { display: none !important; }
 
 </style>
 
@@ -682,7 +684,7 @@ var courseData = {
 
 function openCourseDrawer(courseId) {
   var footer = document.querySelector(".course-drawer__footer");
-  if (footer) { footer.style.display = (courseId === "trial") ? "none" : "block"; }
+  if (footer) { footer.classList.toggle('course-drawer__footer--hidden', courseId === 'trial'); }
   var data = courseData[courseId];
   if (!data) return;
   var more = document.getElementById('courseDrawerMore');

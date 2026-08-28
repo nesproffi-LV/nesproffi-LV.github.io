@@ -372,48 +372,44 @@ document.addEventListener('DOMContentLoaded',function(){
 <div class="quiz-block" id="quiz">
   <h2 class="quiz-block__title">Какой формат вам подойдёт?</h2>
   <p class="quiz-block__subtitle">Ответьте на три вопроса — и узнайте, с чего начать</p>
-  
+
   <div class="quiz-block__questions" id="quiz-questions">
-    
     <div class="quiz-question" data-step="1">
-      <p class="quiz-question__text">1. Что вам сейчас ближе?</p>
+      <p class="quiz-question__text">1. Что вам ближе?</p>
       <div class="quiz-question__options">
-        <button class="quiz-option" data-value="a">Хочу рисовать живых героев и сюжеты из головы</button>
-        <button class="quiz-option" data-value="b">Хочу от наброска прийти к полноценной картине</button>
-        <button class="quiz-option" data-value="c">Хочу быстро написать готовую картину</button>
+        <button class="quiz-option" data-value="a">Скетч — ловить людей, животных и движение</button>
+        <button class="quiz-option" data-value="b">Живопись — цвет, свет и настроение</button>
+        <button class="quiz-option" data-value="c">Скетч + живопись — от наброска к картине</button>
       </div>
     </div>
-  
-    
+
     <div class="quiz-question" data-step="2" style="display:none;">
-      <p class="quiz-question__text">2. Кого или что хочется рисовать?</p>
+      <p class="quiz-question__text">2. Сколько времени готовы уделить?</p>
       <div class="quiz-question__options">
-        <button class="quiz-option" data-value="a">Людей, жесты, драпировку, композицию</button>
-        <button class="quiz-option" data-value="b">Людей и животных — вплоть до своего любимца</button>
-        <button class="quiz-option" data-value="c">Атмосферу и настроение — без сложной анатомии</button>
+        <button class="quiz-option" data-value="a">7 занятий — глубокое погружение</button>
+        <button class="quiz-option" data-value="b">3 занятия — баланс теории и практики</button>
+        <button class="quiz-option" data-value="c">Один вечер — хочу результат сразу</button>
       </div>
     </div>
-  
-    
+
     <div class="quiz-question" data-step="3" style="display:none;">
-      <p class="quiz-question__text">3. Сколько вы готовы уделить?</p>
+      <p class="quiz-question__text">3. Как хотите творить?</p>
       <div class="quiz-question__options">
-        <button class="quiz-option" data-value="a">7 занятий — хочу погрузиться глубоко</button>
-        <button class="quiz-option" data-value="b">3 занятия — серия набросков и финальная картина</button>
-        <button class="quiz-option" data-value="c">3 часа — одно яркое приключение</button>
+        <button class="quiz-option" data-value="a">Самостоятельно — хочу уверенную руку и технику</button>
+        <button class="quiz-option" data-value="b">Самостоятельно — хочу готовую картину на холсте</button>
+        <button class="quiz-option" data-value="c">Вдвоём — парные картины или одна общая работа</button>
       </div>
     </div>
   </div>
-  
-  
+
   <div class="quiz-result" id="quiz-result" style="display:none;">
     <h3 class="quiz-result__title" id="quiz-result-title"></h3>
     <p class="quiz-result__text" id="quiz-result-text"></p>
-    <a class="quiz-result__cta" id="quiz-result-link" href="#">Подробнее о курсе →</a>
+    <a class="quiz-result__cta" id="quiz-result-link" href="#">Подробнее →</a>
     <button class="quiz-result__reset" id="quiz-reset">Пройти заново</button>
   </div>
 </div>
-  
+
 <script>
 (function() {
   const questions = document.querySelectorAll('.quiz-question');
@@ -421,63 +417,63 @@ document.addEventListener('DOMContentLoaded',function(){
   const questionsBlock = document.getElementById('quiz-questions');
   const options = document.querySelectorAll('.quiz-option');
   let answers = [];
+
   
-  
-  const results = {
-    'aaa': { title: 'Динамичный скетч', text: '7 занятий: от живой линии до многофигурной композиции. Оживите героев из воображения — с литературой и живой анатомией.', link: '/courses/dynamic-sketch/' },
-    'aab': { title: 'Динамичный скетч', text: 'Вы тянетесь к живым героям и сюжетам. Курс на 7 занятий пересоберёт ваш рисунок: жест, драпировка, композиция.', link: '/courses/dynamic-sketch/' },
-    'aac': { title: 'Динамичный скетч', text: 'Живые герои и глубокое погружение — это флагманский курс «Динамичный скетч».', link: '/courses/dynamic-sketch/' },
-    'aba': { title: 'Динамичный скетч', text: 'Люди, жест, композиция — ваш путь. 7 занятий, от первой линии до многофигурной сцены.', link: '/courses/dynamic-sketch/' },
-    'abb': { title: 'Линия и цвет', text: 'Люди и животные — это «Линия и цвет»: серия набросков и полноценная картина.', link: '/courses/line-and-color/' },
-    'abc': { title: 'Динамичный скетч', text: 'Атмосфера без сложной анатомии — начните с живых героев на курсе «Динамичный скетч».', link: '/courses/dynamic-sketch/' },
-    'aca': { title: 'Динамичный скетч', text: '7 занятий глубокого погружения — «Динамичный скетч» для уверенной руки и живых сюжетов.', link: '/courses/dynamic-sketch/' },
-    'acb': { title: 'Линия и цвет', text: '3 занятия от наброска до картины — «Линия и цвет», можно нарисовать своего любимца.', link: '/courses/line-and-color/' },
-    'acc': { title: 'Картина за 3 часа', text: '3 часа, одно яркое приключение — мастер-класс «Картина за 3 часа». Даже если впервые взяли кисть.', link: '/workshops/mk-1/' },
-    'baa': { title: 'Линия и цвет', text: 'От наброска к полноценной картине — «Линия и цвет», люди и животные, даже любимец.', link: '/courses/line-and-color/' },
-    'bab': { title: 'Линия и цвет', text: 'Серия набросков + финальная картина — это «Линия и цвет».', link: '/courses/line-and-color/' },
-    'bac': { title: 'Линия и цвет', text: 'Быстрая картина и живая линия — «Линия и цвет» соединяет набросок и живопись.', link: '/courses/line-and-color/' },
-    'bba': { title: 'Линия и цвет', text: 'Люди и животные в живописи — «Линия и цвет»: наброски и полноценная картина.', link: '/courses/line-and-color/' },
-    'bbb': { title: 'Линия и цвет', text: 'Ваш формат — «Линия и цвет»: серия набросков и финальная картина.', link: '/courses/line-and-color/' },
-    'bbc': { title: 'Картина за 3 часа', text: 'Атмосфера и настроение за 3 часа — мастер-класс «Картина за 3 часа».', link: '/workshops/mk-1/' },
-    'bca': { title: 'Линия и цвет', text: '3 занятия — от наброска до полноценной картины. Это «Линия и цвет».', link: '/courses/line-and-color/' },
-    'bcb': { title: 'Линия и цвет', text: 'Наброски, живопись и любимый питомец — «Линия и цвет».', link: '/courses/line-and-color/' },
-    'bcc': { title: 'Картина за 3 часа', text: 'Одно яркое приключение за 3 часа — «Картина за 3 часа».', link: '/workshops/mk-1/' },
-    'caa': { title: 'Картина за 3 часа', text: 'Быстро и с результатом — мастер-класс «Картина за 3 часа».', link: '/workshops/mk-1/' },
-    'cab': { title: 'Картина за 3 часа', text: 'Готовая картина без сложной анатомии — «Картина за 3 часа».', link: '/workshops/mk-1/' },
-    'cac': { title: 'Картина за 3 часа', text: '3 часа — и у вас готовая картина. Мастер-класс «Картина за 3 часа».', link: '/workshops/mk-1/' },
-    'cba': { title: 'Картина за 3 часа', text: 'Атмосфера и настроение за один вечер — «Картина за 3 часа».', link: '/workshops/mk-1/' },
-    'cbb': { title: 'Картина за 3 часа', text: 'Каждый МК — новое путешествие. «Картина за 3 часа».', link: '/workshops/mk-1/' },
-    'cbc': { title: 'Картина за 3 часа', text: 'Впервые с кистью? Тогда «Картина за 3 часа» — идеально.', link: '/workshops/mk-1/' },
-    'cca': { title: 'Картина за 3 часа', text: '3 часа, готовый результат, ноль опыта — «Картина за 3 часа».', link: '/workshops/mk-1/' },
-    'ccb': { title: 'Картина за 3 часа', text: 'Быстрый и яркий старт — мастер-класс «Картина за 3 часа».', link: '/workshops/mk-1/' },
-    'ccc': { title: 'Картина за 3 часа', text: 'Одно приключение, одна картина, 3 часа — «Картина за 3 часа».', link: '/workshops/mk-1/' },
-    'default': { title: 'Динамичный скетч', text: 'Начните с главного курса — 7 занятий, которые пересобирают ваш рисунок.', link: '/courses/dynamic-sketch/' }
+  const P = {
+    dyn: { title: 'Динамичный скетч', text: '7 занятий, чтобы рисовать людей и животных живо, точно и с характером. От живой линии до многофигурной композиции.', link: '/courses/dynamic-sketch/' },
+    int: { title: 'Интенсив: люди и животные', text: '3 занятия для быстрого старта: жест, пропорции, конструктор — и живой скетч в смешанной технике.', link: '/courses/intensive/' },
+    lc:  { title: 'Линия и цвет', text: '3 занятия от наброска до акриловой картины. Нарисуйте людей, животных или даже своего любимца.', link: '/courses/line-and-color/' },
+    mk1: { title: 'Картина за 3 часа', text: 'Один вечер — и готовая акриловая картина. Даже если впервые взяли кисть.', link: '/workshops/mk-1/' },
+    mk2: { title: 'Арт-свидание', text: 'Творческий вечер для двоих: парные картины или одна общая работа на память.', link: '/workshops/mk-2/' },
+    mk3: { title: 'Скетч-открытка', text: '3–4 часа — и готовая открытка: портрет, анималистика, архискетч или фуд-скетч.', link: '/workshops/mk-3/' }
   };
+
   
-  options.forEach(btn => {
+  function pick(a) {
+    
+    if (a[2] === 'c') return P.mk2;
+
+    const q1 = a[0], q2 = a[1];
+
+    if (q1 === 'a') {           
+      if (q2 === 'a') return P.dyn;   
+      if (q2 === 'b') return P.int;   
+      return P.mk3;                   
+    }
+
+    if (q1 === 'b') {           
+      if (q2 === 'c') return P.mk1;   
+      return P.lc;                    
+    }
+
+    
+    return P.lc;
+  }
+
+  options.forEach(function(btn) {
     btn.addEventListener('click', function() {
       const step = parseInt(this.closest('.quiz-question').dataset.step);
       answers[step - 1] = this.dataset.value;
       this.closest('.quiz-question').style.display = 'none';
+
       if (step < 3) {
         document.querySelector('.quiz-question[data-step="' + (step + 1) + '"]').style.display = 'block';
       } else {
-        const key = answers.join('');
-        const result = results[key] || results['default'];
-        document.getElementById('quiz-result-title').textContent = '✨ ' + result.title;
-        document.getElementById('quiz-result-text').textContent = result.text;
-        document.getElementById('quiz-result-link').href = result.link;
+        const r = pick(answers);
+        document.getElementById('quiz-result-title').textContent = '✨ ' + r.title;
+        document.getElementById('quiz-result-text').textContent = r.text;
+        document.getElementById('quiz-result-link').href = r.link;
         questionsBlock.style.display = 'none';
         resultBlock.style.display = 'block';
       }
     });
   });
-  
+
   document.getElementById('quiz-reset').addEventListener('click', function() {
     answers = [];
     resultBlock.style.display = 'none';
     questionsBlock.style.display = 'block';
-    questions.forEach(q => q.style.display = 'none');
+    questions.forEach(function(q) { q.style.display = 'none'; });
     document.querySelector('.quiz-question[data-step="1"]').style.display = 'block';
   });
 })();

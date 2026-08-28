@@ -18,7 +18,7 @@
 Разберём, как устроены люди и животные: базовое строение, эмоциональная мимика, динамика поз. Научишься ловко, технично передавать на листе несколькими линиями жест и форму объекта, видеть и передавать движения.">
 <meta name="author" content="">
 <link rel="canonical" href="https://nesproffi-LV.github.io/courses/line-and-color/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.b54ba996311b927fa414c01d374ad359f27b72590bd2f51b0831cf4b78c5b1c0.css" integrity="sha256-tUupljEbkn&#43;kFMAdN0rTWfJ7clkL0vUbCDHPS3jFscA=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.ec719662a9e2877d46a90f41ea6f5a8d0654872108bce350af8f7c11e0239181.css" integrity="sha256-7HGWYqnih31GqQ9B6m9ajQZUhyEIvONQr498EeAjkYE=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://nesproffi-LV.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://nesproffi-LV.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://nesproffi-LV.github.io/favicon-32x32.png">
@@ -405,20 +405,43 @@ document.addEventListener('DOMContentLoaded',function(){
     </figure></div>
 <script>
 (function() {
-  var links = document.querySelectorAll('.lv-gallery__link');
-  if (!links.length) return;
+  
+  if (window.__lvLightboxInit) return;
+  window.__lvLightboxInit = true;
+
   var overlay = document.createElement('div');
   overlay.className = 'lv-lightbox';
   overlay.innerHTML = '<button class="lv-lightbox__close" aria-label="Закрыть">&times;</button><img class="lv-lightbox__img" alt="">';
   document.body.appendChild(overlay);
   var img = overlay.querySelector('.lv-lightbox__img');
   var close = overlay.querySelector('.lv-lightbox__close');
-  function openLv(src) { img.src = src; overlay.classList.add('lv-lightbox--open'); document.body.style.overflow = 'hidden'; }
-  function closeLv() { overlay.classList.remove('lv-lightbox--open'); document.body.style.overflow = ''; img.src = ''; }
-  links.forEach(function(a) { a.addEventListener('click', function(e) { e.preventDefault(); openLv(a.getAttribute('href')); }); });
-  close.addEventListener('click', closeLv);
-  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeLv(); });
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLv(); });
+
+  function openLv(src) {
+    img.src = src;
+    overlay.classList.add('lv-lightbox--open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLv() {
+    overlay.classList.remove('lv-lightbox--open');
+    document.body.style.overflow = '';
+    img.src = '';
+  }
+
+  
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest ? e.target.closest('.lv-gallery__link') : null;
+    if (link) {
+      e.preventDefault();
+      openLv(link.getAttribute('href'));
+      return;
+    }
+    if (e.target === overlay || e.target === close) {
+      closeLv();
+    }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLv();
+  });
 })();
 </script>
 
@@ -439,20 +462,43 @@ document.addEventListener('DOMContentLoaded',function(){
     </figure></div>
 <script>
 (function() {
-  var links = document.querySelectorAll('.lv-gallery__link');
-  if (!links.length) return;
+  
+  if (window.__lvLightboxInit) return;
+  window.__lvLightboxInit = true;
+
   var overlay = document.createElement('div');
   overlay.className = 'lv-lightbox';
   overlay.innerHTML = '<button class="lv-lightbox__close" aria-label="Закрыть">&times;</button><img class="lv-lightbox__img" alt="">';
   document.body.appendChild(overlay);
   var img = overlay.querySelector('.lv-lightbox__img');
   var close = overlay.querySelector('.lv-lightbox__close');
-  function openLv(src) { img.src = src; overlay.classList.add('lv-lightbox--open'); document.body.style.overflow = 'hidden'; }
-  function closeLv() { overlay.classList.remove('lv-lightbox--open'); document.body.style.overflow = ''; img.src = ''; }
-  links.forEach(function(a) { a.addEventListener('click', function(e) { e.preventDefault(); openLv(a.getAttribute('href')); }); });
-  close.addEventListener('click', closeLv);
-  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeLv(); });
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLv(); });
+
+  function openLv(src) {
+    img.src = src;
+    overlay.classList.add('lv-lightbox--open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLv() {
+    overlay.classList.remove('lv-lightbox--open');
+    document.body.style.overflow = '';
+    img.src = '';
+  }
+
+  
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest ? e.target.closest('.lv-gallery__link') : null;
+    if (link) {
+      e.preventDefault();
+      openLv(link.getAttribute('href'));
+      return;
+    }
+    if (e.target === overlay || e.target === close) {
+      closeLv();
+    }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLv();
+  });
 })();
 </script>
 
@@ -473,20 +519,43 @@ document.addEventListener('DOMContentLoaded',function(){
     </figure></div>
 <script>
 (function() {
-  var links = document.querySelectorAll('.lv-gallery__link');
-  if (!links.length) return;
+  
+  if (window.__lvLightboxInit) return;
+  window.__lvLightboxInit = true;
+
   var overlay = document.createElement('div');
   overlay.className = 'lv-lightbox';
   overlay.innerHTML = '<button class="lv-lightbox__close" aria-label="Закрыть">&times;</button><img class="lv-lightbox__img" alt="">';
   document.body.appendChild(overlay);
   var img = overlay.querySelector('.lv-lightbox__img');
   var close = overlay.querySelector('.lv-lightbox__close');
-  function openLv(src) { img.src = src; overlay.classList.add('lv-lightbox--open'); document.body.style.overflow = 'hidden'; }
-  function closeLv() { overlay.classList.remove('lv-lightbox--open'); document.body.style.overflow = ''; img.src = ''; }
-  links.forEach(function(a) { a.addEventListener('click', function(e) { e.preventDefault(); openLv(a.getAttribute('href')); }); });
-  close.addEventListener('click', closeLv);
-  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeLv(); });
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLv(); });
+
+  function openLv(src) {
+    img.src = src;
+    overlay.classList.add('lv-lightbox--open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLv() {
+    overlay.classList.remove('lv-lightbox--open');
+    document.body.style.overflow = '';
+    img.src = '';
+  }
+
+  
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest ? e.target.closest('.lv-gallery__link') : null;
+    if (link) {
+      e.preventDefault();
+      openLv(link.getAttribute('href'));
+      return;
+    }
+    if (e.target === overlay || e.target === close) {
+      closeLv();
+    }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLv();
+  });
 })();
 </script>
 

@@ -154,20 +154,43 @@
     &lt;/figure&gt;&lt;/div&gt;
 &lt;script&gt;
 (function() {
-  var links = document.querySelectorAll(&#39;.lv-gallery__link&#39;);
-  if (!links.length) return;
+  
+  if (window.__lvLightboxInit) return;
+  window.__lvLightboxInit = true;
+
   var overlay = document.createElement(&#39;div&#39;);
   overlay.className = &#39;lv-lightbox&#39;;
   overlay.innerHTML = &#39;&lt;button class=&#34;lv-lightbox__close&#34; aria-label=&#34;Закрыть&#34;&gt;&amp;times;&lt;/button&gt;&lt;img class=&#34;lv-lightbox__img&#34; alt=&#34;&#34;&gt;&#39;;
   document.body.appendChild(overlay);
   var img = overlay.querySelector(&#39;.lv-lightbox__img&#39;);
   var close = overlay.querySelector(&#39;.lv-lightbox__close&#39;);
-  function openLv(src) { img.src = src; overlay.classList.add(&#39;lv-lightbox--open&#39;); document.body.style.overflow = &#39;hidden&#39;; }
-  function closeLv() { overlay.classList.remove(&#39;lv-lightbox--open&#39;); document.body.style.overflow = &#39;&#39;; img.src = &#39;&#39;; }
-  links.forEach(function(a) { a.addEventListener(&#39;click&#39;, function(e) { e.preventDefault(); openLv(a.getAttribute(&#39;href&#39;)); }); });
-  close.addEventListener(&#39;click&#39;, closeLv);
-  overlay.addEventListener(&#39;click&#39;, function(e) { if (e.target === overlay) closeLv(); });
-  document.addEventListener(&#39;keydown&#39;, function(e) { if (e.key === &#39;Escape&#39;) closeLv(); });
+
+  function openLv(src) {
+    img.src = src;
+    overlay.classList.add(&#39;lv-lightbox--open&#39;);
+    document.body.style.overflow = &#39;hidden&#39;;
+  }
+  function closeLv() {
+    overlay.classList.remove(&#39;lv-lightbox--open&#39;);
+    document.body.style.overflow = &#39;&#39;;
+    img.src = &#39;&#39;;
+  }
+
+  
+  document.addEventListener(&#39;click&#39;, function(e) {
+    var link = e.target.closest ? e.target.closest(&#39;.lv-gallery__link&#39;) : null;
+    if (link) {
+      e.preventDefault();
+      openLv(link.getAttribute(&#39;href&#39;));
+      return;
+    }
+    if (e.target === overlay || e.target === close) {
+      closeLv();
+    }
+  });
+  document.addEventListener(&#39;keydown&#39;, function(e) {
+    if (e.key === &#39;Escape&#39;) closeLv();
+  });
 })();
 &lt;/script&gt;
 
@@ -276,20 +299,43 @@
     &lt;/figure&gt;&lt;/div&gt;
 &lt;script&gt;
 (function() {
-  var links = document.querySelectorAll(&#39;.lv-gallery__link&#39;);
-  if (!links.length) return;
+  
+  if (window.__lvLightboxInit) return;
+  window.__lvLightboxInit = true;
+
   var overlay = document.createElement(&#39;div&#39;);
   overlay.className = &#39;lv-lightbox&#39;;
   overlay.innerHTML = &#39;&lt;button class=&#34;lv-lightbox__close&#34; aria-label=&#34;Закрыть&#34;&gt;&amp;times;&lt;/button&gt;&lt;img class=&#34;lv-lightbox__img&#34; alt=&#34;&#34;&gt;&#39;;
   document.body.appendChild(overlay);
   var img = overlay.querySelector(&#39;.lv-lightbox__img&#39;);
   var close = overlay.querySelector(&#39;.lv-lightbox__close&#39;);
-  function openLv(src) { img.src = src; overlay.classList.add(&#39;lv-lightbox--open&#39;); document.body.style.overflow = &#39;hidden&#39;; }
-  function closeLv() { overlay.classList.remove(&#39;lv-lightbox--open&#39;); document.body.style.overflow = &#39;&#39;; img.src = &#39;&#39;; }
-  links.forEach(function(a) { a.addEventListener(&#39;click&#39;, function(e) { e.preventDefault(); openLv(a.getAttribute(&#39;href&#39;)); }); });
-  close.addEventListener(&#39;click&#39;, closeLv);
-  overlay.addEventListener(&#39;click&#39;, function(e) { if (e.target === overlay) closeLv(); });
-  document.addEventListener(&#39;keydown&#39;, function(e) { if (e.key === &#39;Escape&#39;) closeLv(); });
+
+  function openLv(src) {
+    img.src = src;
+    overlay.classList.add(&#39;lv-lightbox--open&#39;);
+    document.body.style.overflow = &#39;hidden&#39;;
+  }
+  function closeLv() {
+    overlay.classList.remove(&#39;lv-lightbox--open&#39;);
+    document.body.style.overflow = &#39;&#39;;
+    img.src = &#39;&#39;;
+  }
+
+  
+  document.addEventListener(&#39;click&#39;, function(e) {
+    var link = e.target.closest ? e.target.closest(&#39;.lv-gallery__link&#39;) : null;
+    if (link) {
+      e.preventDefault();
+      openLv(link.getAttribute(&#39;href&#39;));
+      return;
+    }
+    if (e.target === overlay || e.target === close) {
+      closeLv();
+    }
+  });
+  document.addEventListener(&#39;keydown&#39;, function(e) {
+    if (e.key === &#39;Escape&#39;) closeLv();
+  });
 })();
 &lt;/script&gt;
 

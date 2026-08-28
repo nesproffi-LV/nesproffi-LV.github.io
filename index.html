@@ -405,7 +405,7 @@ document.addEventListener('DOMContentLoaded',function(){
   <div class="quiz-result" id="quiz-result" style="display:none;">
     <h3 class="quiz-result__title" id="quiz-result-title"></h3>
     <p class="quiz-result__text" id="quiz-result-text"></p>
-    <a class="quiz-result__cta" id="quiz-result-link" href="#">Подробнее →</a>
+    <a class="quiz-result__cta" id="quiz-result-link" href="#" onclick="var l=this.getAttribute('data-link'); if(l){ window.location.href=l; } return false;">Подробнее →</a>
     <button class="quiz-result__reset" id="quiz-reset">Пройти заново</button>
   </div>
 </div>
@@ -462,7 +462,7 @@ document.addEventListener('DOMContentLoaded',function(){
         const r = pick(answers);
         document.getElementById('quiz-result-title').textContent = '✨ ' + r.title;
         document.getElementById('quiz-result-text').textContent = r.text;
-        document.getElementById('quiz-result-link').href = r.link;
+        var linkEl = document.getElementById('quiz-result-link'); linkEl.href = r.link; linkEl.setAttribute('data-link', r.link);
         questionsBlock.style.display = 'none';
         resultBlock.style.display = 'block';
       }

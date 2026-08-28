@@ -125,27 +125,29 @@
       <link>https://nesproffi-LV.github.io/courses/dynamic-sketch/</link>
       <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://nesproffi-LV.github.io/courses/dynamic-sketch/</guid>
-      <description>&lt;h2 class=&#34;lv-gallery__title&#34;&gt;Процесс и результат&lt;/h2&gt;&lt;div class=&#34;lv-gallery&#34;&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--hero&#34;&gt;
+      <description>&lt;p&gt;Авторский курс из 7 занятий для тех, кто хочет рисовать людей и животных живо, точно и с характером — без лишней теории и долгих месяцев учёбы.&lt;/p&gt;
+&lt;p&gt;Построен на синтезе методик Лумиса, Вилппу, Николаидеса и современных подходов к пластической анатомии. Никакой скучной академки — только конструктор, жест, энергия и свобода стилизации.&lt;/p&gt;
+&lt;h2 class=&#34;lv-gallery__title&#34;&gt;Процесс и результат&lt;/h2&gt;&lt;div class=&#34;lv-gallery lv-gallery--6&#34;&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--0&#34;&gt;
       &lt;a href=&#34;https://nesproffi-LV.github.io/images/gallery/dynamic-sketch/sketch-1.webp&#34; class=&#34;lv-gallery__link&#34; data-lightbox&gt;
         &lt;img src=&#34;https://nesproffi-LV.github.io/images/gallery/dynamic-sketch/sketch-1.webp&#34; alt=&#34;Динамичный скетч — работы студии&#34; loading=&#34;lazy&#34;&gt;
       &lt;/a&gt;
-    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--side1&#34;&gt;
+    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--1&#34;&gt;
       &lt;a href=&#34;https://nesproffi-LV.github.io/images/gallery/dynamic-sketch/sketch-2.webp&#34; class=&#34;lv-gallery__link&#34; data-lightbox&gt;
         &lt;img src=&#34;https://nesproffi-LV.github.io/images/gallery/dynamic-sketch/sketch-2.webp&#34; alt=&#34;Динамичный скетч — работы студии&#34; loading=&#34;lazy&#34;&gt;
       &lt;/a&gt;
-    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--side2&#34;&gt;
+    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--2&#34;&gt;
       &lt;a href=&#34;https://nesproffi-LV.github.io/images/gallery/dynamic-sketch/sketch-3.webp&#34; class=&#34;lv-gallery__link&#34; data-lightbox&gt;
         &lt;img src=&#34;https://nesproffi-LV.github.io/images/gallery/dynamic-sketch/sketch-3.webp&#34; alt=&#34;Динамичный скетч — работы студии&#34; loading=&#34;lazy&#34;&gt;
       &lt;/a&gt;
-    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--b1&#34;&gt;
+    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--3&#34;&gt;
       &lt;a href=&#34;https://nesproffi-LV.github.io/images/gallery/dynamic-sketch/sketch-4.webp&#34; class=&#34;lv-gallery__link&#34; data-lightbox&gt;
         &lt;img src=&#34;https://nesproffi-LV.github.io/images/gallery/dynamic-sketch/sketch-4.webp&#34; alt=&#34;Динамичный скетч — работы студии&#34; loading=&#34;lazy&#34;&gt;
       &lt;/a&gt;
-    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--b2&#34;&gt;
+    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--4&#34;&gt;
       &lt;a href=&#34;https://nesproffi-LV.github.io/images/gallery/dynamic-sketch/sketch-5.webp&#34; class=&#34;lv-gallery__link&#34; data-lightbox&gt;
         &lt;img src=&#34;https://nesproffi-LV.github.io/images/gallery/dynamic-sketch/sketch-5.webp&#34; alt=&#34;Динамичный скетч — работы студии&#34; loading=&#34;lazy&#34;&gt;
       &lt;/a&gt;
-    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--b3&#34;&gt;
+    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--5&#34;&gt;
       &lt;a href=&#34;https://nesproffi-LV.github.io/images/gallery/dynamic-sketch/sketch-6.webp&#34; class=&#34;lv-gallery__link&#34; data-lightbox&gt;
         &lt;img src=&#34;https://nesproffi-LV.github.io/images/gallery/dynamic-sketch/sketch-6.webp&#34; alt=&#34;Динамичный скетч — работы студии&#34; loading=&#34;lazy&#34;&gt;
       &lt;/a&gt;
@@ -160,29 +162,19 @@
   document.body.appendChild(overlay);
   var img = overlay.querySelector(&#39;.lv-lightbox__img&#39;);
   var close = overlay.querySelector(&#39;.lv-lightbox__close&#39;);
-  function openLv(src) {
-    img.src = src;
-    overlay.classList.add(&#39;lv-lightbox--open&#39;);
-    document.body.style.overflow = &#39;hidden&#39;;
-  }
-  function closeLv() {
-    overlay.classList.remove(&#39;lv-lightbox--open&#39;);
-    document.body.style.overflow = &#39;&#39;;
-    img.src = &#39;&#39;;
-  }
-  links.forEach(function(a) {
-    a.addEventListener(&#39;click&#39;, function(e) {
-      e.preventDefault();
-      openLv(a.getAttribute(&#39;href&#39;));
-    });
-  });
+  function openLv(src) { img.src = src; overlay.classList.add(&#39;lv-lightbox--open&#39;); document.body.style.overflow = &#39;hidden&#39;; }
+  function closeLv() { overlay.classList.remove(&#39;lv-lightbox--open&#39;); document.body.style.overflow = &#39;&#39;; img.src = &#39;&#39;; }
+  links.forEach(function(a) { a.addEventListener(&#39;click&#39;, function(e) { e.preventDefault(); openLv(a.getAttribute(&#39;href&#39;)); }); });
   close.addEventListener(&#39;click&#39;, closeLv);
   overlay.addEventListener(&#39;click&#39;, function(e) { if (e.target === overlay) closeLv(); });
   document.addEventListener(&#39;keydown&#39;, function(e) { if (e.key === &#39;Escape&#39;) closeLv(); });
 })();
 &lt;/script&gt;
 
-&lt;p&gt;Авторский курс из 7 занятий для тех, кто хочет рисовать людей и животных живо, точно и с характером — без лишней теории и долгих месяцев учёбы.&lt;/p&gt;</description>
+&lt;hr&gt;
+&lt;h2 id=&#34;программа-7-занятий&#34;&gt;Программа (7 занятий)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;1. Линия и жест: от пятна к движению&lt;/strong&gt;
+Три кита скетча — линия, пятно, силуэт. Учимся видеть главное и передавать динамику через линию действия.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Интенсив: люди и животные — курс 2 занятия | Ligne Vive</title>
@@ -204,64 +196,15 @@
       <link>https://nesproffi-LV.github.io/courses/line-and-color/</link>
       <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://nesproffi-LV.github.io/courses/line-and-color/</guid>
-      <description>&lt;h2 class=&#34;lv-gallery__title&#34;&gt;Процесс и результат&lt;/h2&gt;&lt;div class=&#34;lv-gallery&#34;&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--hero&#34;&gt;
-      &lt;a href=&#34;https://nesproffi-LV.github.io/images/gallery/line-color/color-1.webp&#34; class=&#34;lv-gallery__link&#34; data-lightbox&gt;
-        &lt;img src=&#34;https://nesproffi-LV.github.io/images/gallery/line-color/color-1.webp&#34; alt=&#34;Линия и цвет — работы студии&#34; loading=&#34;lazy&#34;&gt;
-      &lt;/a&gt;
-    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--side1&#34;&gt;
-      &lt;a href=&#34;https://nesproffi-LV.github.io/images/gallery/line-color/color-2.webp&#34; class=&#34;lv-gallery__link&#34; data-lightbox&gt;
-        &lt;img src=&#34;https://nesproffi-LV.github.io/images/gallery/line-color/color-2.webp&#34; alt=&#34;Линия и цвет — работы студии&#34; loading=&#34;lazy&#34;&gt;
-      &lt;/a&gt;
-    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--side2&#34;&gt;
-      &lt;a href=&#34;https://nesproffi-LV.github.io/images/gallery/line-color/color-3.webp&#34; class=&#34;lv-gallery__link&#34; data-lightbox&gt;
-        &lt;img src=&#34;https://nesproffi-LV.github.io/images/gallery/line-color/color-3.webp&#34; alt=&#34;Линия и цвет — работы студии&#34; loading=&#34;lazy&#34;&gt;
-      &lt;/a&gt;
-    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--b1&#34;&gt;
-      &lt;a href=&#34;https://nesproffi-LV.github.io/images/gallery/line-color/color-4.webp&#34; class=&#34;lv-gallery__link&#34; data-lightbox&gt;
-        &lt;img src=&#34;https://nesproffi-LV.github.io/images/gallery/line-color/color-4.webp&#34; alt=&#34;Линия и цвет — работы студии&#34; loading=&#34;lazy&#34;&gt;
-      &lt;/a&gt;
-    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--b2&#34;&gt;
-      &lt;a href=&#34;https://nesproffi-LV.github.io/images/gallery/line-color/color-5.webp&#34; class=&#34;lv-gallery__link&#34; data-lightbox&gt;
-        &lt;img src=&#34;https://nesproffi-LV.github.io/images/gallery/line-color/color-5.webp&#34; alt=&#34;Линия и цвет — работы студии&#34; loading=&#34;lazy&#34;&gt;
-      &lt;/a&gt;
-    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--b3&#34;&gt;
-      &lt;a href=&#34;https://nesproffi-LV.github.io/images/gallery/line-color/color-6.webp&#34; class=&#34;lv-gallery__link&#34; data-lightbox&gt;
-        &lt;img src=&#34;https://nesproffi-LV.github.io/images/gallery/line-color/color-6.webp&#34; alt=&#34;Линия и цвет — работы студии&#34; loading=&#34;lazy&#34;&gt;
-      &lt;/a&gt;
-    &lt;/figure&gt;&lt;/div&gt;
-&lt;script&gt;
-(function() {
-  var links = document.querySelectorAll(&#39;.lv-gallery__link&#39;);
-  if (!links.length) return;
-  var overlay = document.createElement(&#39;div&#39;);
-  overlay.className = &#39;lv-lightbox&#39;;
-  overlay.innerHTML = &#39;&lt;button class=&#34;lv-lightbox__close&#34; aria-label=&#34;Закрыть&#34;&gt;&amp;times;&lt;/button&gt;&lt;img class=&#34;lv-lightbox__img&#34; alt=&#34;&#34;&gt;&#39;;
-  document.body.appendChild(overlay);
-  var img = overlay.querySelector(&#39;.lv-lightbox__img&#39;);
-  var close = overlay.querySelector(&#39;.lv-lightbox__close&#39;);
-  function openLv(src) {
-    img.src = src;
-    overlay.classList.add(&#39;lv-lightbox--open&#39;);
-    document.body.style.overflow = &#39;hidden&#39;;
-  }
-  function closeLv() {
-    overlay.classList.remove(&#39;lv-lightbox--open&#39;);
-    document.body.style.overflow = &#39;&#39;;
-    img.src = &#39;&#39;;
-  }
-  links.forEach(function(a) {
-    a.addEventListener(&#39;click&#39;, function(e) {
-      e.preventDefault();
-      openLv(a.getAttribute(&#39;href&#39;));
-    });
-  });
-  close.addEventListener(&#39;click&#39;, closeLv);
-  overlay.addEventListener(&#39;click&#39;, function(e) { if (e.target === overlay) closeLv(); });
-  document.addEventListener(&#39;keydown&#39;, function(e) { if (e.key === &#39;Escape&#39;) closeLv(); });
-})();
-&lt;/script&gt;
-
-&lt;p&gt;Три занятия, где скетч перетекает в живопись, а линия обретает цвет. От быстрого наброска до акриловой картины на холсте — один шаг.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Три занятия, где скетч перетекает в живопись, а линия обретает цвет. От быстрого наброска до акриловой картины на холсте — один шаг.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;почему-стоит-пойти-именно-сюда&#34;&gt;Почему стоит пойти именно сюда?&lt;/h2&gt;
+&lt;p&gt;Потому что здесь не учат «правильно», здесь учат чувствовать.&lt;/p&gt;
+&lt;p&gt;Уютно, легко и по-настоящему вдохновляюще — ты погрузишься в новые ощущения, знания и опыт, которые останутся с тобой надолго.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;что-тебя-ждёт&#34;&gt;Что тебя ждёт?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Занятие 1. Живая линия&lt;/strong&gt;
+Разберём, как устроены люди и животные: базовое строение, эмоциональная мимика, динамика поз. Научишься ловко, технично передавать на листе несколькими линиями жест и форму объекта, видеть и передавать движения.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Скетч-открытка — мастер-класс | Ligne Vive Москва</title>
@@ -303,27 +246,30 @@
       <link>https://nesproffi-LV.github.io/workshops/mk-1/</link>
       <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
       <guid>https://nesproffi-LV.github.io/workshops/mk-1/</guid>
-      <description>&lt;h2 class=&#34;lv-gallery__title&#34;&gt;Процесс и результат&lt;/h2&gt;&lt;div class=&#34;lv-gallery&#34;&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--hero&#34;&gt;
+      <description>&lt;p&gt;Каждую неделю — новая тема. Новая картина. Новое путешествие.&lt;/p&gt;
+&lt;p&gt;Мы пишем в стиле экспрессивного импрессионизма: смело, свободно, с живым мазком и вибрацией цвета. Вы не копируете референс — вы передаёте настроение, свет и дыхание места.&lt;/p&gt;
+&lt;p&gt;Это не просто урок. Это trois heures, которые вы дарите себе. Мы не копируем — мы &lt;strong&gt;проживаем&lt;/strong&gt; картину от первого мазка до финального блика.&lt;/p&gt;
+&lt;h2 class=&#34;lv-gallery__title&#34;&gt;Процесс и результат&lt;/h2&gt;&lt;div class=&#34;lv-gallery lv-gallery--6&#34;&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--0&#34;&gt;
       &lt;a href=&#34;https://nesproffi-LV.github.io/images/gallery/mk-1/acrylic-1.webp&#34; class=&#34;lv-gallery__link&#34; data-lightbox&gt;
         &lt;img src=&#34;https://nesproffi-LV.github.io/images/gallery/mk-1/acrylic-1.webp&#34; alt=&#34;Картина за 3 часа — работы студии&#34; loading=&#34;lazy&#34;&gt;
       &lt;/a&gt;
-    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--side1&#34;&gt;
+    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--1&#34;&gt;
       &lt;a href=&#34;https://nesproffi-LV.github.io/images/gallery/mk-1/acrylic-2.webp&#34; class=&#34;lv-gallery__link&#34; data-lightbox&gt;
         &lt;img src=&#34;https://nesproffi-LV.github.io/images/gallery/mk-1/acrylic-2.webp&#34; alt=&#34;Картина за 3 часа — работы студии&#34; loading=&#34;lazy&#34;&gt;
       &lt;/a&gt;
-    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--side2&#34;&gt;
+    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--2&#34;&gt;
       &lt;a href=&#34;https://nesproffi-LV.github.io/images/gallery/mk-1/acrylic-3.webp&#34; class=&#34;lv-gallery__link&#34; data-lightbox&gt;
         &lt;img src=&#34;https://nesproffi-LV.github.io/images/gallery/mk-1/acrylic-3.webp&#34; alt=&#34;Картина за 3 часа — работы студии&#34; loading=&#34;lazy&#34;&gt;
       &lt;/a&gt;
-    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--b1&#34;&gt;
+    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--3&#34;&gt;
       &lt;a href=&#34;https://nesproffi-LV.github.io/images/gallery/mk-1/acrylic-4.webp&#34; class=&#34;lv-gallery__link&#34; data-lightbox&gt;
         &lt;img src=&#34;https://nesproffi-LV.github.io/images/gallery/mk-1/acrylic-4.webp&#34; alt=&#34;Картина за 3 часа — работы студии&#34; loading=&#34;lazy&#34;&gt;
       &lt;/a&gt;
-    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--b2&#34;&gt;
+    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--4&#34;&gt;
       &lt;a href=&#34;https://nesproffi-LV.github.io/images/gallery/mk-1/acrylic-5.webp&#34; class=&#34;lv-gallery__link&#34; data-lightbox&gt;
         &lt;img src=&#34;https://nesproffi-LV.github.io/images/gallery/mk-1/acrylic-5.webp&#34; alt=&#34;Картина за 3 часа — работы студии&#34; loading=&#34;lazy&#34;&gt;
       &lt;/a&gt;
-    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--b3&#34;&gt;
+    &lt;/figure&gt;&lt;figure class=&#34;lv-gallery__item lv-gallery__item--5&#34;&gt;
       &lt;a href=&#34;https://nesproffi-LV.github.io/images/gallery/mk-1/acrylic-6.webp&#34; class=&#34;lv-gallery__link&#34; data-lightbox&gt;
         &lt;img src=&#34;https://nesproffi-LV.github.io/images/gallery/mk-1/acrylic-6.webp&#34; alt=&#34;Картина за 3 часа — работы студии&#34; loading=&#34;lazy&#34;&gt;
       &lt;/a&gt;
@@ -338,29 +284,22 @@
   document.body.appendChild(overlay);
   var img = overlay.querySelector(&#39;.lv-lightbox__img&#39;);
   var close = overlay.querySelector(&#39;.lv-lightbox__close&#39;);
-  function openLv(src) {
-    img.src = src;
-    overlay.classList.add(&#39;lv-lightbox--open&#39;);
-    document.body.style.overflow = &#39;hidden&#39;;
-  }
-  function closeLv() {
-    overlay.classList.remove(&#39;lv-lightbox--open&#39;);
-    document.body.style.overflow = &#39;&#39;;
-    img.src = &#39;&#39;;
-  }
-  links.forEach(function(a) {
-    a.addEventListener(&#39;click&#39;, function(e) {
-      e.preventDefault();
-      openLv(a.getAttribute(&#39;href&#39;));
-    });
-  });
+  function openLv(src) { img.src = src; overlay.classList.add(&#39;lv-lightbox--open&#39;); document.body.style.overflow = &#39;hidden&#39;; }
+  function closeLv() { overlay.classList.remove(&#39;lv-lightbox--open&#39;); document.body.style.overflow = &#39;&#39;; img.src = &#39;&#39;; }
+  links.forEach(function(a) { a.addEventListener(&#39;click&#39;, function(e) { e.preventDefault(); openLv(a.getAttribute(&#39;href&#39;)); }); });
   close.addEventListener(&#39;click&#39;, closeLv);
   overlay.addEventListener(&#39;click&#39;, function(e) { if (e.target === overlay) closeLv(); });
   document.addEventListener(&#39;keydown&#39;, function(e) { if (e.key === &#39;Escape&#39;) closeLv(); });
 })();
 &lt;/script&gt;
 
-&lt;p&gt;Каждую неделю — новая тема. Новая картина. Новое путешествие.&lt;/p&gt;</description>
+&lt;hr&gt;
+&lt;h2 id=&#34;сюжеты-которые-мы-берём&#34;&gt;Сюжеты, которые мы берём&lt;/h2&gt;
+&lt;p&gt;— величественные фьорды, где скалы встречаются с холодным морем;
+— заснеженные вершины Гималаев, пронзающие облака;
+— лавандовые поля Прованса, утопающие в фиолетовом тумане;
+— северное сияние, танцующее над ледяными просторами;
+— бирюзовые лагуны, где тёплый бриз шевелит пальмы.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

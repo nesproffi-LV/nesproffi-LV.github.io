@@ -10,7 +10,7 @@
 <meta name="description" content="Курсы по скетчингу и живописи — Ligne Vive | Москва - Ligne Vive — творческая мастерская">
 <meta name="author" content="">
 <link rel="canonical" href="https://nesproffi-LV.github.io/courses/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.b73cc4c56dc14adaa24da1698b0158c8ad747221b07f780f75aabdc61ef8e291.css" integrity="sha256-tzzExW3BStqiTaFpiwFYyK10ciGwf3gPdaq9xh744pE=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b54ba996311b927fa414c01d374ad359f27b72590bd2f51b0831cf4b78c5b1c0.css" integrity="sha256-tUupljEbkn&#43;kFMAdN0rTWfJ7clkL0vUbCDHPS3jFscA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://nesproffi-LV.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://nesproffi-LV.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://nesproffi-LV.github.io/favicon-32x32.png">
@@ -347,30 +347,32 @@ document.addEventListener('DOMContentLoaded',function(){
         
         <div class="morph-card__body">
           <h3 class="morph-card__title">Динамичный скетч: от пятна до образа — курс 7 занятий | Ligne Vive</h3>
-          <p class="morph-card__subtitle"><h2 class="lv-gallery__title">Процесс и результат …</h2></p>
+          <p class="morph-card__subtitle"><p>Авторский курс из 7 занятий для тех, кто хочет рисовать людей и животных живо, точно и с характером …</p></p>
           <div class="morph-card__detail">
             <div class="morph-card__detail-inner">
-              <h2 class="lv-gallery__title">Процесс и результат</h2><div class="lv-gallery"><figure class="lv-gallery__item lv-gallery__item--hero">
+              <p>Авторский курс из 7 занятий для тех, кто хочет рисовать людей и животных живо, точно и с характером — без лишней теории и долгих месяцев учёбы.</p>
+<p>Построен на синтезе методик Лумиса, Вилппу, Николаидеса и современных подходов к пластической анатомии. Никакой скучной академки — только конструктор, жест, энергия и свобода стилизации.</p>
+<h2 class="lv-gallery__title">Процесс и результат</h2><div class="lv-gallery lv-gallery--6"><figure class="lv-gallery__item lv-gallery__item--0">
       <a href="/images/gallery/dynamic-sketch/sketch-1.webp" class="lv-gallery__link" data-lightbox>
         <img src="/images/gallery/dynamic-sketch/sketch-1.webp" alt="Динамичный скетч — работы студии" loading="lazy">
       </a>
-    </figure><figure class="lv-gallery__item lv-gallery__item--side1">
+    </figure><figure class="lv-gallery__item lv-gallery__item--1">
       <a href="/images/gallery/dynamic-sketch/sketch-2.webp" class="lv-gallery__link" data-lightbox>
         <img src="/images/gallery/dynamic-sketch/sketch-2.webp" alt="Динамичный скетч — работы студии" loading="lazy">
       </a>
-    </figure><figure class="lv-gallery__item lv-gallery__item--side2">
+    </figure><figure class="lv-gallery__item lv-gallery__item--2">
       <a href="/images/gallery/dynamic-sketch/sketch-3.webp" class="lv-gallery__link" data-lightbox>
         <img src="/images/gallery/dynamic-sketch/sketch-3.webp" alt="Динамичный скетч — работы студии" loading="lazy">
       </a>
-    </figure><figure class="lv-gallery__item lv-gallery__item--b1">
+    </figure><figure class="lv-gallery__item lv-gallery__item--3">
       <a href="/images/gallery/dynamic-sketch/sketch-4.webp" class="lv-gallery__link" data-lightbox>
         <img src="/images/gallery/dynamic-sketch/sketch-4.webp" alt="Динамичный скетч — работы студии" loading="lazy">
       </a>
-    </figure><figure class="lv-gallery__item lv-gallery__item--b2">
+    </figure><figure class="lv-gallery__item lv-gallery__item--4">
       <a href="/images/gallery/dynamic-sketch/sketch-5.webp" class="lv-gallery__link" data-lightbox>
         <img src="/images/gallery/dynamic-sketch/sketch-5.webp" alt="Динамичный скетч — работы студии" loading="lazy">
       </a>
-    </figure><figure class="lv-gallery__item lv-gallery__item--b3">
+    </figure><figure class="lv-gallery__item lv-gallery__item--5">
       <a href="/images/gallery/dynamic-sketch/sketch-6.webp" class="lv-gallery__link" data-lightbox>
         <img src="/images/gallery/dynamic-sketch/sketch-6.webp" alt="Динамичный скетч — работы студии" loading="lazy">
       </a>
@@ -385,30 +387,15 @@ document.addEventListener('DOMContentLoaded',function(){
   document.body.appendChild(overlay);
   var img = overlay.querySelector('.lv-lightbox__img');
   var close = overlay.querySelector('.lv-lightbox__close');
-  function openLv(src) {
-    img.src = src;
-    overlay.classList.add('lv-lightbox--open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLv() {
-    overlay.classList.remove('lv-lightbox--open');
-    document.body.style.overflow = '';
-    img.src = '';
-  }
-  links.forEach(function(a) {
-    a.addEventListener('click', function(e) {
-      e.preventDefault();
-      openLv(a.getAttribute('href'));
-    });
-  });
+  function openLv(src) { img.src = src; overlay.classList.add('lv-lightbox--open'); document.body.style.overflow = 'hidden'; }
+  function closeLv() { overlay.classList.remove('lv-lightbox--open'); document.body.style.overflow = ''; img.src = ''; }
+  links.forEach(function(a) { a.addEventListener('click', function(e) { e.preventDefault(); openLv(a.getAttribute('href')); }); });
   close.addEventListener('click', closeLv);
   overlay.addEventListener('click', function(e) { if (e.target === overlay) closeLv(); });
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLv(); });
 })();
 </script>
 
-<p>Авторский курс из 7 занятий для тех, кто хочет рисовать людей и животных живо, точно и с характером — без лишней теории и долгих месяцев учёбы.</p>
-<p>Построен на синтезе методик Лумиса, Вилппу, Николаидеса и современных подходов к пластической анатомии. Никакой скучной академки — только конструктор, жест, энергия и свобода стилизации.</p>
 <hr>
 <h2 id="программа-7-занятий">Программа (7 занятий)</h2>
 <p><strong>1. Линия и жест: от пятна к движению</strong>
@@ -429,6 +416,38 @@ document.addEventListener('DOMContentLoaded',function(){
 <p>Мы работаем с образами, а не с шаблонами. Только живое участие, только ваше воображение — и тогда новые знания останутся с вами навсегда. Когда вы читаете «Отверженных» Гюго, Жан Вальжан уже существует внутри вас — со своей осанкой, взглядом, усталостью и силой. Наша задача — дать ему проявиться.</p>
 <p>Любимые герои получают шанс ожить — из мысленных образов в реальный мир. Приходите, если хотите нарисовать своего Ромео, свою Эсмеральду, своего Дон Кихота — или придумать, как выглядел бы Дориан Грей в вашей голове.</p>
 <p>Это не просто скетч. Это разговор с книгой, которая живёт внутри вас.</p>
+<div class="lv-gallery lv-gallery--3"><figure class="lv-gallery__item lv-gallery__item--0">
+      <a href="/images/gallery/dynamic-sketch/sketch-7.webp" class="lv-gallery__link" data-lightbox>
+        <img src="/images/gallery/dynamic-sketch/sketch-7.webp" alt="Герои классики — работы студии" loading="lazy">
+      </a>
+    </figure><figure class="lv-gallery__item lv-gallery__item--1">
+      <a href="/images/gallery/dynamic-sketch/sketch-8.webp" class="lv-gallery__link" data-lightbox>
+        <img src="/images/gallery/dynamic-sketch/sketch-8.webp" alt="Герои классики — работы студии" loading="lazy">
+      </a>
+    </figure><figure class="lv-gallery__item lv-gallery__item--2">
+      <a href="/images/gallery/dynamic-sketch/sketch-9.webp" class="lv-gallery__link" data-lightbox>
+        <img src="/images/gallery/dynamic-sketch/sketch-9.webp" alt="Герои классики — работы студии" loading="lazy">
+      </a>
+    </figure></div>
+<script>
+(function() {
+  var links = document.querySelectorAll('.lv-gallery__link');
+  if (!links.length) return;
+  var overlay = document.createElement('div');
+  overlay.className = 'lv-lightbox';
+  overlay.innerHTML = '<button class="lv-lightbox__close" aria-label="Закрыть">&times;</button><img class="lv-lightbox__img" alt="">';
+  document.body.appendChild(overlay);
+  var img = overlay.querySelector('.lv-lightbox__img');
+  var close = overlay.querySelector('.lv-lightbox__close');
+  function openLv(src) { img.src = src; overlay.classList.add('lv-lightbox--open'); document.body.style.overflow = 'hidden'; }
+  function closeLv() { overlay.classList.remove('lv-lightbox--open'); document.body.style.overflow = ''; img.src = ''; }
+  links.forEach(function(a) { a.addEventListener('click', function(e) { e.preventDefault(); openLv(a.getAttribute('href')); }); });
+  close.addEventListener('click', closeLv);
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeLv(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLv(); });
+})();
+</script>
+
 <p>Каждое занятие — практика под моим руководством. Вы уходите с готовыми набросками, новым пониманием тела и уверенностью в своей линии.</p>
 <hr>
 <h2 id="кому-подойдёт">Кому подойдёт</h2>
@@ -519,30 +538,61 @@ document.addEventListener('DOMContentLoaded',function(){
         
         <div class="morph-card__body">
           <h3 class="morph-card__title">Линия и цвет: от наброска до картины — курс | Ligne Vive</h3>
-          <p class="morph-card__subtitle"><h2 class="lv-gallery__title">Процесс и результат …</h2></p>
+          <p class="morph-card__subtitle"><p>Три занятия, где скетч перетекает в живопись, а линия обретает цвет. От быстрого наброска до …</p></p>
           <div class="morph-card__detail">
             <div class="morph-card__detail-inner">
-              <h2 class="lv-gallery__title">Процесс и результат</h2><div class="lv-gallery"><figure class="lv-gallery__item lv-gallery__item--hero">
+              <p>Три занятия, где скетч перетекает в живопись, а линия обретает цвет. От быстрого наброска до акриловой картины на холсте — один шаг.</p>
+<hr>
+<h2 id="почему-стоит-пойти-именно-сюда">Почему стоит пойти именно сюда?</h2>
+<p>Потому что здесь не учат «правильно», здесь учат чувствовать.</p>
+<p>Уютно, легко и по-настоящему вдохновляюще — ты погрузишься в новые ощущения, знания и опыт, которые останутся с тобой надолго.</p>
+<hr>
+<h2 id="что-тебя-ждёт">Что тебя ждёт?</h2>
+<p><strong>Занятие 1. Живая линия</strong>
+Разберём, как устроены люди и животные: базовое строение, эмоциональная мимика, динамика поз. Научишься ловко, технично передавать на листе несколькими линиями жест и форму объекта, видеть и передавать движения.</p>
+<div class="lv-gallery lv-gallery--3"><figure class="lv-gallery__item lv-gallery__item--0">
       <a href="/images/gallery/line-color/color-1.webp" class="lv-gallery__link" data-lightbox>
         <img src="/images/gallery/line-color/color-1.webp" alt="Линия и цвет — работы студии" loading="lazy">
       </a>
-    </figure><figure class="lv-gallery__item lv-gallery__item--side1">
+    </figure><figure class="lv-gallery__item lv-gallery__item--1">
       <a href="/images/gallery/line-color/color-2.webp" class="lv-gallery__link" data-lightbox>
         <img src="/images/gallery/line-color/color-2.webp" alt="Линия и цвет — работы студии" loading="lazy">
       </a>
-    </figure><figure class="lv-gallery__item lv-gallery__item--side2">
+    </figure><figure class="lv-gallery__item lv-gallery__item--2">
       <a href="/images/gallery/line-color/color-3.webp" class="lv-gallery__link" data-lightbox>
         <img src="/images/gallery/line-color/color-3.webp" alt="Линия и цвет — работы студии" loading="lazy">
       </a>
-    </figure><figure class="lv-gallery__item lv-gallery__item--b1">
+    </figure></div>
+<script>
+(function() {
+  var links = document.querySelectorAll('.lv-gallery__link');
+  if (!links.length) return;
+  var overlay = document.createElement('div');
+  overlay.className = 'lv-lightbox';
+  overlay.innerHTML = '<button class="lv-lightbox__close" aria-label="Закрыть">&times;</button><img class="lv-lightbox__img" alt="">';
+  document.body.appendChild(overlay);
+  var img = overlay.querySelector('.lv-lightbox__img');
+  var close = overlay.querySelector('.lv-lightbox__close');
+  function openLv(src) { img.src = src; overlay.classList.add('lv-lightbox--open'); document.body.style.overflow = 'hidden'; }
+  function closeLv() { overlay.classList.remove('lv-lightbox--open'); document.body.style.overflow = ''; img.src = ''; }
+  links.forEach(function(a) { a.addEventListener('click', function(e) { e.preventDefault(); openLv(a.getAttribute('href')); }); });
+  close.addEventListener('click', closeLv);
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeLv(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLv(); });
+})();
+</script>
+
+<p><strong>Занятие 2. Твой первый готовый набросок к картине</strong>
+Ты научишься видеть форму и передавать характер, а воздушная перспектива поможет твоим героям по-настоящему ожить на бумаге. В руках — линеры и акварельные маркеры. Ты создашь серию живых скетчей, которыми захочется делиться.</p>
+<div class="lv-gallery lv-gallery--3"><figure class="lv-gallery__item lv-gallery__item--0">
       <a href="/images/gallery/line-color/color-4.webp" class="lv-gallery__link" data-lightbox>
         <img src="/images/gallery/line-color/color-4.webp" alt="Линия и цвет — работы студии" loading="lazy">
       </a>
-    </figure><figure class="lv-gallery__item lv-gallery__item--b2">
+    </figure><figure class="lv-gallery__item lv-gallery__item--1">
       <a href="/images/gallery/line-color/color-5.webp" class="lv-gallery__link" data-lightbox>
         <img src="/images/gallery/line-color/color-5.webp" alt="Линия и цвет — работы студии" loading="lazy">
       </a>
-    </figure><figure class="lv-gallery__item lv-gallery__item--b3">
+    </figure><figure class="lv-gallery__item lv-gallery__item--2">
       <a href="/images/gallery/line-color/color-6.webp" class="lv-gallery__link" data-lightbox>
         <img src="/images/gallery/line-color/color-6.webp" alt="Линия и цвет — работы студии" loading="lazy">
       </a>
@@ -557,41 +607,49 @@ document.addEventListener('DOMContentLoaded',function(){
   document.body.appendChild(overlay);
   var img = overlay.querySelector('.lv-lightbox__img');
   var close = overlay.querySelector('.lv-lightbox__close');
-  function openLv(src) {
-    img.src = src;
-    overlay.classList.add('lv-lightbox--open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLv() {
-    overlay.classList.remove('lv-lightbox--open');
-    document.body.style.overflow = '';
-    img.src = '';
-  }
-  links.forEach(function(a) {
-    a.addEventListener('click', function(e) {
-      e.preventDefault();
-      openLv(a.getAttribute('href'));
-    });
-  });
+  function openLv(src) { img.src = src; overlay.classList.add('lv-lightbox--open'); document.body.style.overflow = 'hidden'; }
+  function closeLv() { overlay.classList.remove('lv-lightbox--open'); document.body.style.overflow = ''; img.src = ''; }
+  links.forEach(function(a) { a.addEventListener('click', function(e) { e.preventDefault(); openLv(a.getAttribute('href')); }); });
   close.addEventListener('click', closeLv);
   overlay.addEventListener('click', function(e) { if (e.target === overlay) closeLv(); });
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLv(); });
 })();
 </script>
 
-<p>Три занятия, где скетч перетекает в живопись, а линия обретает цвет. От быстрого наброска до акриловой картины на холсте — один шаг.</p>
-<hr>
-<h2 id="почему-стоит-пойти-именно-сюда">Почему стоит пойти именно сюда?</h2>
-<p>Потому что здесь не учат «правильно», здесь учат чувствовать.</p>
-<p>Уютно, легко и по-настоящему вдохновляюще — ты погрузишься в новые ощущения, знания и опыт, которые останутся с тобой надолго.</p>
-<hr>
-<h2 id="что-тебя-ждёт">Что тебя ждёт?</h2>
-<p><strong>Занятие 1. Живая линия</strong>
-Разберём, как устроены люди и животные: базовое строение, эмоциональная мимика, динамика поз. Научишься ловко, технично передавать на листе несколькими линиями жест и форму объекта, видеть и передавать движения.</p>
-<p><strong>Занятие 2. Твой первый готовый набросок к картине</strong>
-Ты научишься видеть форму и передавать характер, а воздушная перспектива поможет твоим героям по-настоящему ожить на бумаге. В руках — линеры и акварельные маркеры. Ты создашь серию живых скетчей, которыми захочется делиться.</p>
 <p><strong>Занятие 3. Твоя картина</strong>
 Перенесём самый живой эскиз на холст и напишем акриловую картину. Откроем живописные приёмы, поиграем с цветом, светом и материалами. Ты почувствуешь себя испытателем, кропотливым наблюдателем и живописцем — даже если впервые держишь кисть. И вот что самое классное: вместо случайного персонажа ты можешь изобразить себя или своего любимого питомца. Это будет не просто работа, а личная история.</p>
+<div class="lv-gallery lv-gallery--3"><figure class="lv-gallery__item lv-gallery__item--0">
+      <a href="/images/gallery/line-color/color-7.webp" class="lv-gallery__link" data-lightbox>
+        <img src="/images/gallery/line-color/color-7.webp" alt="Линия и цвет — работы студии" loading="lazy">
+      </a>
+    </figure><figure class="lv-gallery__item lv-gallery__item--1">
+      <a href="/images/gallery/line-color/color-8.webp" class="lv-gallery__link" data-lightbox>
+        <img src="/images/gallery/line-color/color-8.webp" alt="Линия и цвет — работы студии" loading="lazy">
+      </a>
+    </figure><figure class="lv-gallery__item lv-gallery__item--2">
+      <a href="/images/gallery/line-color/color-9.webp" class="lv-gallery__link" data-lightbox>
+        <img src="/images/gallery/line-color/color-9.webp" alt="Линия и цвет — работы студии" loading="lazy">
+      </a>
+    </figure></div>
+<script>
+(function() {
+  var links = document.querySelectorAll('.lv-gallery__link');
+  if (!links.length) return;
+  var overlay = document.createElement('div');
+  overlay.className = 'lv-lightbox';
+  overlay.innerHTML = '<button class="lv-lightbox__close" aria-label="Закрыть">&times;</button><img class="lv-lightbox__img" alt="">';
+  document.body.appendChild(overlay);
+  var img = overlay.querySelector('.lv-lightbox__img');
+  var close = overlay.querySelector('.lv-lightbox__close');
+  function openLv(src) { img.src = src; overlay.classList.add('lv-lightbox--open'); document.body.style.overflow = 'hidden'; }
+  function closeLv() { overlay.classList.remove('lv-lightbox--open'); document.body.style.overflow = ''; img.src = ''; }
+  links.forEach(function(a) { a.addEventListener('click', function(e) { e.preventDefault(); openLv(a.getAttribute('href')); }); });
+  close.addEventListener('click', closeLv);
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeLv(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLv(); });
+})();
+</script>
+
 <hr>
 <h2 id="что-вы-получите">Что вы получите</h2>
 <ul>

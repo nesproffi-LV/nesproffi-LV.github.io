@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="canonical" href="https://nesproffi-LV.github.io/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.dc4430f09f37a626f994abafeb39c342cf7f479e07aecc02ae7e9632f5f89fd7.css" integrity="sha256-3EQw8J83pib5lKuv6znDQs9/R54HrswCrn6WMvX4n9c=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.791d671b1a9cdac494b8d1376ae1e837e9dd2d2d9729ff84fd289b37d1829a8e.css" integrity="sha256-eR1nGxqc2sSUuNE3auHoN&#43;ndLS2XKf&#43;E/SibN9GCmo4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://nesproffi-LV.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://nesproffi-LV.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://nesproffi-LV.github.io/favicon-32x32.png">
@@ -206,14 +206,14 @@ document.addEventListener('DOMContentLoaded',function(){
 <meta property="og:url" content="https://nesproffi-LV.github.io/">
   <meta property="og:site_name" content="Ligne Vive — творческая мастерская">
   <meta property="og:title" content="Ligne Vive — творческая студия скетчинга и живописи в Москве">
-  <meta property="og:description" content="📍 Занятия проходят в Москве и Коломне Линия оживает здесь dessiner·respirer·créer·ligne vive·dessiner·respirer·créer·ligne vive· Кто проведёт вас за руку — от первой линии до живой картины Меня зовут Инесса. Я художник и исследователь пластической анатомии. Тело открылось мне через спорт — и это изменило то, как я рисую и как учу.
+  <meta property="og:description" content="📍 Занятия проходят в Москве и Коломне dessiner·respirer·créer·ligne vive·dessiner·respirer·créer·ligne vive· Листайте Кто проведёт вас за руку — от первой линии до живой картины Меня зовут Инесса. Я художник и исследователь пластической анатомии. Тело открылось мне через спорт — и это изменило то, как я рисую и как учу.
 Моя идея проста: тело — не набор мышц, а единая живая система натяжений и спиралей. Первый штрих уже несёт энергию всей работы. Я учу видеть эту «живую линию» внутри формы.">
   <meta property="og:locale" content="ru">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Ligne Vive — творческая студия скетчинга и живописи в Москве">
-  <meta name="twitter:description" content="📍 Занятия проходят в Москве и Коломне Линия оживает здесь dessiner·respirer·créer·ligne vive·dessiner·respirer·créer·ligne vive· Кто проведёт вас за руку — от первой линии до живой картины Меня зовут Инесса. Я художник и исследователь пластической анатомии. Тело открылось мне через спорт — и это изменило то, как я рисую и как учу.
+  <meta name="twitter:description" content="📍 Занятия проходят в Москве и Коломне dessiner·respirer·créer·ligne vive·dessiner·respirer·créer·ligne vive· Листайте Кто проведёт вас за руку — от первой линии до живой картины Меня зовут Инесса. Я художник и исследователь пластической анатомии. Тело открылось мне через спорт — и это изменило то, как я рисую и как учу.
 Моя идея проста: тело — не набор мышц, а единая живая система натяжений и спиралей. Первый штрих уже несёт энергию всей работы. Я учу видеть эту «живую линию» внутри формы.">
 
 <script type="application/ld+json">
@@ -243,11 +243,11 @@ document.addEventListener('DOMContentLoaded',function(){
 <nav class="nav" id="mainNav">
  <a href="/" class="nav__logo">Ligne Vive</a>
  <div class="nav__links">
-   <a href="/about/">О студии</a>
+   <a href="/blog/">Блог</a>
    <a href="/courses/">Курсы</a>
    <a href="/workshops/">Мастер-классы</a>
-   <a href="/gallery/">Галерея</a>
    <a href="/offers/">Сертификаты</a>
+   <a href="/gallery/">Галерея</a>
  </div>
  
  <button class="hamburger" id="hamburger-btn" aria-label="Меню">
@@ -327,24 +327,28 @@ document.addEventListener('DOMContentLoaded',function(){
 
 <script src="/js/paint-splatter.js" defer></script>
 <main class="main"> 
-<div class="post-content md-content"><div class="hero-video-wrapper">
-  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="/images/hero-poster.jpg">
+<div class="post-content md-content"><div class="hero-video-wrapper" id="heroVideoWrapper">
+  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="/images/hero-poster.jpg">
     <source src="/videos/hero-bg.mp4" type="video/mp4">
   </video>
   <div class="hero-video-overlay"></div>
+  <div class="hero-cursor-glow" id="heroCursorGlow" aria-hidden="true"></div>
 
   <div class="hero-location">📍 Занятия проходят в <strong>Москве</strong> и <strong>Коломне</strong></div>
-
-  
-  <div class="hero-text hero-text--center">
-    <h2>Линия оживает здесь</h2>
-  </div>
 
   
   <div class="hero-mantra">
     <div class="scrolling-mantra__track"><span>dessiner</span><span class="dot">·</span><span>respirer</span><span class="dot">·</span><span>créer</span><span class="dot">·</span><span>ligne vive</span><span class="dot">·</span><span>dessiner</span><span class="dot">·</span><span>respirer</span><span class="dot">·</span><span>créer</span><span class="dot">·</span><span>ligne vive</span><span class="dot">·</span></div>
   </div>
+
+  <a class="hero-scroll-hint" href="#about-intro" aria-label="Листайте вниз">
+    <span>Листайте</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  </a>
 </div>
+
+<script src="/js/hero-interactive.js" defer></script>
+<script src="/js/hero-crossfade.js" defer></script>
 
 
 <div class="paper-divider"></div>
@@ -358,7 +362,10 @@ document.addEventListener('DOMContentLoaded',function(){
       <p class="about-intro__text"><strong>Меня зовут Инесса.</strong> Я художник и исследователь пластической анатомии. Тело открылось мне через спорт — и это изменило то, как я рисую и как учу.</p>
       <p class="about-intro__text"><strong>Моя идея проста:</strong> тело — не набор мышц, а единая живая система натяжений и спиралей. Первый штрих уже несёт энергию всей работы. Я учу видеть эту «живую линию» внутри формы.</p>
       <p class="about-intro__text"><strong>Здесь нет скучной академии.</strong> Только конструктор, жест, цвет и радость от готовой работы. Приходите — проведём первую линию вместе.</p>
-      <a href="javascript:void(0)" onclick="var t=this; t.classList.add('splattering'); setTimeout(function(){ t.classList.remove('splattering'); if(typeof openBookingModal==='function'){openBookingModal();} }, 900); return false;" class="hero-cta" style="font-family:'Inter',sans-serif;font-size:16px;padding:14px 34px;margin-top:18px;text-decoration:none!important;border-bottom:none!important;">Познакомиться на пробном уроке — 899 ₽</a>
+      <div class="about-intro__actions">
+        <a href="javascript:void(0)" onclick="var t=this; t.classList.add('splattering'); setTimeout(function(){ t.classList.remove('splattering'); if(typeof openBookingModal==='function'){openBookingModal();} }, 900); return false;" class="hero-cta about-intro__cta">Познакомиться на пробном уроке — 899 ₽</a>
+        <a href="/about/" class="about-intro__more">Подробнее →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -641,6 +648,9 @@ document.addEventListener('DOMContentLoaded',function(){
     </a>
 
   </div>
+  <div class="blog-cards-more">
+    <a href="/blog/" class="showcase-all-btn">Все статьи →</a>
+  </div>
 </section>
 
 
@@ -698,6 +708,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
     <div class="atmosphere-cta-wrap">
       <a href="javascript:void(0)" onclick="var t=this;t.classList.add('splattering');setTimeout(function(){t.classList.remove('splattering');openBookingModal();},900);return false;" class="atmosphere-cta">Хочу также →</a>
+      <a href="/gallery/" class="showcase-all-btn showcase-all-btn--ghost">Смотреть галерею →</a>
     </div>
   </div>
 </section>

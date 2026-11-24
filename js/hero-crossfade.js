@@ -1,51 +1,101 @@
 /**
- * Ligne Vive — hero-crossfade (каркас)
- * Пока ролик один — ничего не делает.
- * Чтобы включить кроссфейд, добавьте пути роликов в window.HERO_CLIPS
- * (2+ бесшовных клипа в одном стиле). Ролики плавно растворяются друг в друге.
- * ВАЖНО: кроссфейд (живой цикл) и скролл-скраббинг (рисунок по скроллу) — разные
- * режимы. При включении кроссфейда отключите скраббинг в hero-interactive.js.
+ * Ligne Vive — hero: трёхслойное видео + кроссфейд по оси X
+ * Слой 1 (низ): руки; Слой 2: конь; Слой 3: героиня.
+ * Курсор: слева — конь, справа — героиня. Тач/reduced-motion — автопереключение 7с.
+ * Плюс появление секций при скролле и «буквы» в заголовке «Личной истории».
  */
 (function () {
   'use strict';
-  var CLIPS = window.HERO_CLIPS || ['/videos/hero-bg.mp4'];
-  if (!CLIPS || CLIPS.length < 2) return;
-
-  var wrapper = document.getElementById('heroVideoWrapper');
-  var first = document.getElementById('heroVideo');
-  if (!wrapper || !first) return;
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var layers = [first];
+  var fine = window.matchMedia('(pointer: fine)').matches;
 
-  first.style.transition = 'opacity 1.2s ease';
-  first.style.opacity = '1';
+  // --- 1) Кроссфейд слоёв (конь ↔ героиня) ---
+  var wrapper = document.getElementById('heroVideoWrapper');
+  var horse = document.getElementById('heroVideoHorse');
+  var heroine = document.getElementById('heroVideoHeroine');
 
-  for (var i = 1; i < CLIPS.length; i++) {
-    var v = document.createElement('video');
-    v.className = 'hero-video';
-    v.autoplay = true;
-    v.muted = true;
-    v.loop = true;
-    v.playsInline = true;
-    v.preload = 'auto';
-    v.src = CLIPS[i];
-    v.style.zIndex = String(i);
-    v.style.opacity = '0';
-    v.style.transition = 'opacity 1.2s ease';
-    wrapper.insertBefore(v, first.nextSibling);
-    layers.push(v);
+  function setLayers(horseO, heroineO) {
+    if (horse) horse.style.opacity = String(horseO);
+    if (heroine) heroine.style.opacity = String(heroineO);
   }
 
-  var active = 0;
-  var INTERVAL = reduced ? 0 : 6000;
-
-  function crossfade() {
-    var next = (active + 1) % layers.length;
-    layers[active].style.opacity = '0';
-    layers[next].style.opacity = '1';
-    active = next;
+  if (wrapper && horse && heroine) {
+    if (fine && !reduced) {
+      wrapper.addEventListener('mousemove', function (e) {
+        var r = wrapper.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width;
+        // мёртвая зона: конь полностью исчезает к 65%, героиня проявляется с 35%
+        var horseO = Math.max(0, Math.min(1, (0.65 - x) / 0.3));
+        var heroineO = Math.max(0, Math.min(1, (x - 0.35) / 0.3));
+        setLayers(horseO, heroineO);
+      });
+      wrapper.addEventListener('pointerleave', function () {
+        setLayers(1, 0); // возврат к коню
+      });
+    } else {
+      var showHorse = true;
+      setInterval(function () {
+        showHorse = !showHorse;
+        setLayers(showHorse ? 1 : 0, showHorse ? 0 : 1);
+      }, 7000);
+    }
   }
 
-  if (INTERVAL > 0) setInterval(crossfade, INTERVAL);
+  // --- 2) Появление секций при скролле ---
+  var revealTargets = document.querySelectorAll(
+    '.about-intro, .quiz-zone, .showcase-section, .blog-cards-section, .atmosphere-section'
+  );
+  if (revealTargets.length) {
+    revealTargets.forEach(function (el) { el.classList.add('reveal'); });
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      revealTargets.forEach(function (el) { io.observe(el); });
+    } else {
+      revealTargets.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+  }
+
+  // --- 3) Буквы в заголовке «Личной истории» ---
+  var aboutTitle = document.querySelector('.about-intro__title');
+  if (aboutTitle && !reduced) {
+    var words = aboutTitle.textContent.trim().split(' ');
+    aboutTitle.setAttribute('aria-label', aboutTitle.textContent.trim());
+    var frag = document.createDocumentFragment();
+    words.forEach(function (word, wi) {
+      var wordSpan = document.createElement('span');
+      wordSpan.className = 'split-word';
+      wordSpan.setAttribute('aria-hidden', 'true');
+      word.split('').forEach(function (ch, li) {
+        var wrap = document.createElement('span');
+        wrap.className = 'split-letter';
+        wrap.style.transitionDelay = ((wi * 0.05) + (li * 0.012)) + 's';
+        var inner = document.createElement('span');
+        inner.textContent = ch;
+        wrap.appendChild(inner);
+        wordSpan.appendChild(wrap);
+      });
+      frag.appendChild(wordSpan);
+      if (wi < words.length - 1) { frag.appendChild(document.createTextNode(' ')); }
+    });
+    aboutTitle.textContent = '';
+    aboutTitle.appendChild(frag);
+    var titleIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          aboutTitle.classList.add('is-revealed');
+          titleIO.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+    titleIO.observe(aboutTitle);
+  }
 })();
+

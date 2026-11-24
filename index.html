@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="canonical" href="https://nesproffi-LV.github.io/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.791d671b1a9cdac494b8d1376ae1e837e9dd2d2d9729ff84fd289b37d1829a8e.css" integrity="sha256-eR1nGxqc2sSUuNE3auHoN&#43;ndLS2XKf&#43;E/SibN9GCmo4=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6b56c2530c43de679a9a12b76b23582f1fc1bb42afd83aeb8fd8eb3b13f396ab.css" integrity="sha256-a1bCUwxD3meamhK3ayNYLx/Bu0Kv2Drrj9jrOxPzlqs=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://nesproffi-LV.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://nesproffi-LV.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://nesproffi-LV.github.io/favicon-32x32.png">
@@ -206,15 +206,13 @@ document.addEventListener('DOMContentLoaded',function(){
 <meta property="og:url" content="https://nesproffi-LV.github.io/">
   <meta property="og:site_name" content="Ligne Vive — творческая мастерская">
   <meta property="og:title" content="Ligne Vive — творческая студия скетчинга и живописи в Москве">
-  <meta property="og:description" content="📍 Занятия проходят в Москве и Коломне dessiner·respirer·créer·ligne vive·dessiner·respirer·créer·ligne vive· Листайте Кто проведёт вас за руку — от первой линии до живой картины Меня зовут Инесса. Я художник и исследователь пластической анатомии. Тело открылось мне через спорт — и это изменило то, как я рисую и как учу.
-Моя идея проста: тело — не набор мышц, а единая живая система натяжений и спиралей. Первый штрих уже несёт энергию всей работы. Я учу видеть эту «живую линию» внутри формы.">
+  <meta property="og:description" content="📍 Занятия проходят в Москве и Коломне dessiner·respirer·créer·ligne vive·dessiner·respirer·créer·ligne vive· Листайте Кто проведёт вас за руку — от первой линии до живой картины Меня зовут Инесса. Я художник и исследователь пластической анатомии. Тело открылось мне через спорт — и это изменило то, как я рисую и как учу.">
   <meta property="og:locale" content="ru">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Ligne Vive — творческая студия скетчинга и живописи в Москве">
-  <meta name="twitter:description" content="📍 Занятия проходят в Москве и Коломне dessiner·respirer·créer·ligne vive·dessiner·respirer·créer·ligne vive· Листайте Кто проведёт вас за руку — от первой линии до живой картины Меня зовут Инесса. Я художник и исследователь пластической анатомии. Тело открылось мне через спорт — и это изменило то, как я рисую и как учу.
-Моя идея проста: тело — не набор мышц, а единая живая система натяжений и спиралей. Первый штрих уже несёт энергию всей работы. Я учу видеть эту «живую линию» внутри формы.">
+  <meta name="twitter:description" content="📍 Занятия проходят в Москве и Коломне dessiner·respirer·créer·ligne vive·dessiner·respirer·créer·ligne vive· Листайте Кто проведёт вас за руку — от первой линии до живой картины Меня зовут Инесса. Я художник и исследователь пластической анатомии. Тело открылось мне через спорт — и это изменило то, как я рисую и как учу.">
 
 <script type="application/ld+json">
 {
@@ -328,11 +326,15 @@ document.addEventListener('DOMContentLoaded',function(){
 <script src="/js/paint-splatter.js" defer></script>
 <main class="main"> 
 <div class="post-content md-content"><div class="hero-video-wrapper" id="heroVideoWrapper">
-  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="/images/hero-poster.jpg">
-    <source src="/videos/hero-bg.mp4" type="video/mp4">
+  
+  <video class="hero-video hero-video--base" id="heroVideoHands" autoplay muted loop playsinline preload="auto" poster="/images/hero-poster.jpg">
+    <source src="/videos/hands.mp4" type="video/mp4">
+  </video>
+  
+  <video class="hero-video hero-video--drawing" id="heroVideoHeroine" autoplay muted loop playsinline preload="auto">
+    <source src="/videos/heroine.webm" type="video/webm">
   </video>
   <div class="hero-video-overlay"></div>
-  <div class="hero-cursor-glow" id="heroCursorGlow" aria-hidden="true"></div>
 
   <div class="hero-location">📍 Занятия проходят в <strong>Москве</strong> и <strong>Коломне</strong></div>
 
@@ -347,7 +349,6 @@ document.addEventListener('DOMContentLoaded',function(){
   </a>
 </div>
 
-<script src="/js/hero-interactive.js" defer></script>
 <script src="/js/hero-crossfade.js" defer></script>
 
 

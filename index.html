@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="canonical" href="https://nesproffi-LV.github.io/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6b56c2530c43de679a9a12b76b23582f1fc1bb42afd83aeb8fd8eb3b13f396ab.css" integrity="sha256-a1bCUwxD3meamhK3ayNYLx/Bu0Kv2Drrj9jrOxPzlqs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dd85fa58081dfa56add41bb7d7f41e54efb33900ca32068275816a83ddc5409d.css" integrity="sha256-3YX6WAgd&#43;lat1Bu31/QeVO&#43;zOQDKMgaCdYFqg93FQJ0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://nesproffi-LV.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://nesproffi-LV.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://nesproffi-LV.github.io/favicon-32x32.png">
@@ -327,12 +327,8 @@ document.addEventListener('DOMContentLoaded',function(){
 <main class="main"> 
 <div class="post-content md-content"><div class="hero-video-wrapper" id="heroVideoWrapper">
   
-  <video class="hero-video hero-video--base" id="heroVideoHands" autoplay muted loop playsinline preload="auto" poster="/images/hero-poster.jpg">
-    <source src="/videos/hands.mp4" type="video/mp4">
-  </video>
-  
-  <video class="hero-video hero-video--drawing" id="heroVideoHeroine" autoplay muted loop playsinline preload="auto">
-    <source src="/videos/heroine.webm" type="video/webm">
+  <video class="hero-video hero-video--cover" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="/images/hero-poster.jpg">
+    <source src="/videos/hero-cover.mp4" type="video/mp4">
   </video>
   <div class="hero-video-overlay"></div>
 
@@ -347,9 +343,35 @@ document.addEventListener('DOMContentLoaded',function(){
     <span>Листайте</span>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
   </a>
+
+  
+  <button class="sound-btn" id="soundBtn" type="button" aria-label="Включить звук" aria-pressed="false">
+    <svg class="ico-off" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/>
+      <path d="M16 9l5 6M21 9l-5 6" stroke="currentColor" stroke-width="1.8" fill="none"/>
+    </svg>
+    <svg class="ico-on" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/>
+      <path d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    </svg>
+  </button>
 </div>
 
 <script src="/js/hero-crossfade.js" defer></script>
+<script>
+  (function () {
+    var video = document.getElementById('heroVideo');
+    var btn = document.getElementById('soundBtn');
+    if (!video || !btn) return;
+    btn.addEventListener('click', function () {
+      video.muted = !video.muted;
+      var on = !video.muted;
+      btn.classList.toggle('sound-btn--on', on);
+      btn.setAttribute('aria-pressed', String(on));
+      btn.setAttribute('aria-label', on ? 'Выключить звук' : 'Включить звук');
+    });
+  })();
+</script>
 
 
 <div class="paper-divider"></div>
